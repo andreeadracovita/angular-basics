@@ -1,0 +1,15 @@
+.header {
+    height: 280px;
+    padding: 30px 40px;
+    display: flex;
+    background-color: #fff;
+    justify-content: center;
+}
+.site-slogan {
+    width: 420px;
+    margin-left: 50px;
+    text-align: center;
+}
+h1 {
+    font-size: 45px;
+}

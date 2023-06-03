@@ -1,0 +1,19 @@
+.navbar {
+    display: flex;
+    background-color: #3094eb;
+    align-items: center;
+    justify-content: center;
+}
+.site-name {
+    padding: 5px 30px;
+    color: #fff;
+}
+.site-menu {
+    padding: 10px 30px;
+    margin-left: 200px;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0px 10px;
+}
