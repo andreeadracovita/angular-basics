@@ -1,0 +1,14 @@
+<div *ngFor="let p of products">
+    <div class="product-container">
+        <div class="image-container"><img [src]="p.image" alt="" style="max-width: 200px"></div>
+        <div>
+            <div class="name-container"><p>{{p.name}}</p></div>
+            <div class="detail-container">
+                <div class="details"><b>kcal:</b> {{p.kcal}}</div>
+            </div>
+        </div>
+        <div class="options">
+            <button class="btn btn-success">Show recipe</button>
+        </div>
+    </div>
+</div>

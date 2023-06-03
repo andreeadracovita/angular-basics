@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-
+  slogan: string = 'The only fitness blog you need';
+  source: string = '/assets/fitness.webp';
 }
