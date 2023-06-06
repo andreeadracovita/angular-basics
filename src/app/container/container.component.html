@@ -2,7 +2,7 @@
     <app-nav></app-nav>
     <div class="container">
         <app-header></app-header>
-        <app-search></app-search>
-        <app-products></app-products>
+        <app-search (searchValueChanged)="onSearchValueEntered($event)"></app-search>
+        <app-products [searchValue]="searchValue"></app-products>
     </div>
 </div>

@@ -1,5 +1,5 @@
-<div *ngFor="let p of products">
-    <div class="product-container">
+<ng-container *ngFor="let p of products">
+    <div class="product-container" *ngIf="searchValue === '' ||  p.name.includes(searchValue)">
         <div class="image-container"><img [src]="p.image" alt="" style="max-width: 200px"></div>
         <div>
             <div class="name-container"><p>{{p.name}}</p></div>
@@ -11,4 +11,4 @@
             <button class="btn btn-primary">Show recipe</button>
         </div>
     </div>
-</div>
+</ng-container>

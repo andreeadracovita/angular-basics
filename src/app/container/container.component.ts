@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
     styleUrls: ['./container.component.css']
 })
 export class ContainerComponent {
+    searchValue: string = '';
 
+    onSearchValueEntered(searchValue: string) {
+        this.searchValue = searchValue;
+    }
 }
