@@ -10,3 +10,6 @@ input[type=text] {
     border: solid;
     border-width: 1px;
 }
+.changeBackground {
+    background-color: #3094eb;
+}
