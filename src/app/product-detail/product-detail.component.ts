@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { Product } from '../types/product';
 import { ActivatedRoute } from '@angular/router';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-product-detail',
@@ -13,15 +14,22 @@ export class ProductDetailComponent {
 
   product: Product | undefined = undefined;
   productId: number = -1;
+  routeParamObs: Subscription | undefined = undefined;
 
   ngOnInit(): void {
     // this.productService.onShowDetailsClicked.subscribe((data: Product) => {
     //   this.product = data;
     // });
 
-    this.activatedRoute.paramMap.subscribe((param) => {
+    this.routeParamObs = this.activatedRoute.paramMap.subscribe((param) => {
       this.productId = Number(param.get('id'));
       this.product = this.productService.products.find(x => x.id == this.productId);
     })
+  }
+
+  ngOnDestroy() {
+    if (this.routeParamObs) {
+      this.routeParamObs.unsubscribe();
+    }
   }
 }
