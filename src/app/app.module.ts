@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ContainerComponent } from './container/container.component';
@@ -17,17 +16,7 @@ import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { ErrorComponent } from './error/error.component';
-
-const appRoute: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
-  {path: 'about', component: AboutComponent},
-  {path: 'blog', component: BlogComponent},
-  {path: 'recipes', component: RecipesComponent},
-  {path: 'recipes/:id', component: ProductDetailComponent},
-  {path: 'contact', component: ContactComponent},
-  {path: '**', component: ErrorComponent}
-]
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -49,7 +38,7 @@ const appRoute: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoute)
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
