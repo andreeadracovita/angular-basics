@@ -1,5 +1,6 @@
 <ng-container *ngFor="let p of products">
-    <div class="product-container" [appHighlight]="p.kcal === leastCaloriesRecipe.kcal" *ngIf="searchValue === '' ||  p.name.toLowerCase().includes(searchValue.toLowerCase())">
+    <div class="product-container">
+        <!-- [appHighlight]="p.kcal === leastCaloriesRecipe.kcal" *ngIf="searchValue === '' ||  p.name.toLowerCase().includes(searchValue.toLowerCase())" -->
         <div class="image-container"><img [src]="p.image" alt="" style="max-width: 200px"></div>
         <div>
             <div class="name-container"><p>{{p.name}}</p></div>

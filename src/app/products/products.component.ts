@@ -1,16 +1,22 @@
 import { Component, Input } from '@angular/core';
+import { ProductService } from '../services/product.service'
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  styleUrls: ['./products.component.css'],
+  providers: [ProductService]
 })
 export class ProductsComponent {
-  products = [
-    { id: 1, name: 'Duck and rice', kcal: 306, image: 'assets/products/duck-rice.jpeg' },
-    { id: 2, name: 'Chicken Florentine', kcal: 201, image: 'assets/products/chicken-florentine.jpeg' },
-    { id: 3, name: 'Rainbow veggies', kcal: 150, image: 'assets/products/rainbow-veggies.jpeg'}
-  ];
+  products: { id: number, name: string, kcal: number, image: string }[] = [];
+
+  constructor(private productService: ProductService) {
+
+  }
+
+  ngOnInit() {
+    this.products = this.productService.products;
+  }
 
   @Input()
   searchValue: string = '';
