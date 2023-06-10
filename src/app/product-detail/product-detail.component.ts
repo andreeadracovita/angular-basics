@@ -15,11 +15,13 @@ export class ProductDetailComponent {
   productId: number = -1;
 
   ngOnInit(): void {
-    this.productId = Number(this.activatedRoute.snapshot.params['id']);
     // this.productService.onShowDetailsClicked.subscribe((data: Product) => {
     //   this.product = data;
     // });
 
-    this.product = this.productService.products.find(x => x.id == this.productId);
+    this.activatedRoute.paramMap.subscribe((param) => {
+      this.productId = Number(param.get('id'));
+      this.product = this.productService.products.find(x => x.id == this.productId);
+    })
   }
 }
