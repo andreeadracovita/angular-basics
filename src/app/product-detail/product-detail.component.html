@@ -1,0 +1,15 @@
+<div class="container" *ngIf="product != undefined">
+    <div>
+        <h2>{{ product.name }}</h2>
+        <img [src]="product.image" style="max-width: 300px">
+
+        <h3>Ingredients</h3>
+        <ul *ngFor="let ingredient of product.ingredients">
+            <li>{{ ingredient }}</li>
+        </ul>
+        <p>kcal: {{ product.kcal }}</p>
+
+        <h3>Instructions</h3>
+        <p>{{ product.instructions }}</p>
+    </div>
+</div>

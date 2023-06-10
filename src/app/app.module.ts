@@ -9,6 +9,7 @@ import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
 import { ProductsComponent } from './products/products.component';
 import { HighlightDirective } from './highlight.directive';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HighlightDirective } from './highlight.directive';
     HeaderComponent,
     SearchComponent,
     ProductsComponent,
-    HighlightDirective
+    HighlightDirective,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
