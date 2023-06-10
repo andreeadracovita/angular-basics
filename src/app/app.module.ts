@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
 import { ProductsComponent } from './products/products.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ProductsComponent } from './products/products.component';
     NavComponent,
     HeaderComponent,
     SearchComponent,
-    ProductsComponent
+    ProductsComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
