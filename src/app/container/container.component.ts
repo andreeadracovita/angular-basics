@@ -8,9 +8,5 @@ import { ProductService } from '../services/product.service';
     providers: [ProductService]
 })
 export class ContainerComponent {
-    searchValue: string = '';
-
-    onSearchValueEntered(searchValue: string) {
-        this.searchValue = searchValue;
-    }
+    
 }

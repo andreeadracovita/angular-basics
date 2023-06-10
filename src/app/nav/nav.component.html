@@ -3,10 +3,10 @@
         <h1>iFitness</h1>
     </div>
     <div class="site-menu">
-        <a href="#">HOME</a>
-        <a href="#">ABOUT</a>
-        <a href="#">BLOG</a>
-        <a href="#">VIDEOS</a>
-        <a href="#">CONTACT</a>
+        <a routerLink="home">HOME</a>
+        <a [routerLink]="'about'">ABOUT</a>
+        <a [routerLink]="['blog']">BLOG</a>
+        <a routerLink="recipes">RECIPES</a>
+        <a routerLink="contact">CONTACT</a>
     </div>
 </div>
