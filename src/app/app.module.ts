@@ -24,6 +24,7 @@ const appRoute: Routes = [
   {path: 'about', component: AboutComponent},
   {path: 'blog', component: BlogComponent},
   {path: 'recipes', component: RecipesComponent},
+  {path: 'recipes/:id', component: ProductDetailComponent},
   {path: 'contact', component: ContactComponent},
   {path: '**', component: ErrorComponent}
 ]

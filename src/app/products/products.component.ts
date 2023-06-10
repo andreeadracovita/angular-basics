@@ -32,7 +32,7 @@ export class ProductsComponent {
     return productsCopy.sort((curr, next) => curr.kcal - next.kcal)[0];
   }
 
-  showRecipe(product: Product) {
-    this.productService.showProductDetails(product);
-  }
+  // showRecipe(product: Product) {
+  //   this.productService.showProductDetails(product);
+  // }
 }
