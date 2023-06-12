@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IDeactivateComponent } from '../services/canDeactivate-guard.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -16,5 +17,10 @@ export class ContactComponent implements IDeactivateComponent {
       return confirm('You have unsaved changes. Do you really want to discard these changes?');
     }
     return true;
+  }
+
+  onSubmit(form: NgForm) {
+    console.log('Form submitted!');
+    console.log(form);
   }
 }

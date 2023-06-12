@@ -1,13 +1,21 @@
 <h1 class="text-center">Contact</h1>
-<form class="mt-5 text-center">
+<form class="mt-5" (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
     <label for="fname">First name</label>
-    <input type="text" id="fname" name="firstname" placeholder="First name" class="ms-3 mb-3" [(ngModel)]="firstName">
+    <input type="text" id="fname" name="firstname" placeholder="First name" class="ms-3 mb-3" [(ngModel)]="firstName" required #fname="ngModel">
+    <div *ngIf="fname.invalid && fname.touched">
+        <small>First name is required.</small>
+    </div>
     <br/>
     <label for="lname">Last name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Last name" class="ms-3 mb-3" [(ngModel)]="lastName">
+    <input type="text" id="lname" name="lastname" placeholder="Last name" class="ms-3 mb-3" [(ngModel)]="lastName" required #lname="ngModel">
+    <div *ngIf="lname.invalid && lname.touched">
+        <small>Last name is required.</small>
+    </div>
     <br/>
     <label for="message">Message</label>
-    <textarea id="message" name="message" placeholder="Write your message here" style="height:170px" class="ms-3" [(ngModel)]="message"></textarea>
+    <textarea id="message" name="message" placeholder="Write your message here" style="height:170px" class="ms-3" [(ngModel)]="message" required></textarea>
     <br/>
-    <input type="submit" value="Submit" class="mt-5">
+    <div class="text-center">
+        <input type="submit" value="Submit" class="btn btn-primary mt-5" [disabled]="myForm.invalid">
+    </div>
 </form>

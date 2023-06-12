@@ -1,0 +1,11 @@
+input {
+    border: black 1px solid;
+}
+
+input.ng-invalid.ng-touched {
+    border: red solid;
+}
+
+small {
+    color: red;
+}
