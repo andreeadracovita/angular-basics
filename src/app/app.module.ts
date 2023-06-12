@@ -17,6 +17,7 @@ import { ContactComponent } from './contact/contact.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { ErrorComponent } from './error/error.component';
 import { AppRoutingModule } from './app-routing.module';
+import { CanDeactivateGuardService } from './services/canDeactivate-guard.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { AppRoutingModule } from './app-routing.module';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [CanDeactivateGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

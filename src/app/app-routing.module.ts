@@ -7,6 +7,7 @@ import { RecipesComponent } from "./recipes/recipes.component";
 import { ProductDetailComponent } from "./product-detail/product-detail.component";
 import { ContactComponent } from "./contact/contact.component";
 import { ErrorComponent } from "./error/error.component";
+import { CanDeactivateGuardService } from "./services/canDeactivate-guard.service";
 
 const appRoute: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -15,7 +16,7 @@ const appRoute: Routes = [
     {path: 'blog', component: BlogComponent},
     {path: 'recipes', component: RecipesComponent},
     {path: 'recipes/:id', component: ProductDetailComponent},
-    {path: 'contact', component: ContactComponent},
+    {path: 'contact', canDeactivate: [CanDeactivateGuardService] , component: ContactComponent},
     {path: '**', component: ErrorComponent}
   ]
 
