@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IDeactivateComponent } from '../services/canDeactivate-guard.service';
 import { NgForm } from '@angular/forms';
 
@@ -12,6 +12,8 @@ export class ContactComponent implements IDeactivateComponent {
   lastName: string = '';
   message: string = '';
 
+  @ViewChild('myForm') form: NgForm | undefined;
+
   canExit() {
     if (this.firstName || this.lastName || this.message) {
       return confirm('You have unsaved changes. Do you really want to discard these changes?');
@@ -19,8 +21,7 @@ export class ContactComponent implements IDeactivateComponent {
     return true;
   }
 
-  onSubmit(form: NgForm) {
-    console.log('Form submitted!');
-    console.log(form);
+  onSubmit() {
+    console.log(this.form);
   }
 }
